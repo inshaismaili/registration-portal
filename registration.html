@@ -4,14 +4,34 @@
 	<title>Registration</title>
 </head>
 <body>
-	<form method ="POST" action="/registration">
-		NAME:<input type ="text" name ="name" required><br/>
-		Email:<input type="email" name ="email" required><br/>
-		userid:<input type="text" name="userid" required><br/>
-		password:<input type="password" name="password" required><br/>
-		<input type="submit" value="submit">
-		</form>
+	<h1 align="center">REGISTRATION </h1>
+	<table align="center">
+		<!-- make a form -->
+		<form method ="POST" action="/registration">
+		<tr>
+			<td>NAME</td>
+			<td><input type ="text" name ="name" required></td>
+		</tr>
+		<tr>
+			<td>EMAIL</td>
+			<td><input type="email" name ="email" required></td>
+		</tr>
+		<tr>
+			<td>USERID</td>
+			<td><input type="text" name="userid" required></td>
+		</tr>
+		<tr>
+			<td>PASSWORD</td>
+			<td><input type="password" name="password" required></td>
+		</tr>
+		<tr>
+			<td colspan=2 align="center">
+				<input type="submit" value="submit">
 
+			</td>
+		</tr>
 
+        </form>
+	</table>
 </body>
 </html>

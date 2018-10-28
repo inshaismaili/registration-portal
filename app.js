@@ -60,31 +60,29 @@ var newregistration=Register({name:request.body.name,email:request.body.email,us
 });
 
 app.post('/login',urlep,function(request,response)
-{console.log("login request");//used to print on server side
-Register.find({userid:request.body.userid},function(error,data){
-if(error)
 {
-	throw error;
-}
-console.log(data);
-if(request.body.password===data[0].password)
-response.redirect('/homepage');
-else
-response.end('invalid password');
+	console.log("login post request");//used to print on server side
+	Register.find({userid:request.body.userid},function(error,data){
+		if(error)
+		{
+			throw error;
+		}
+		console.log(data);
+		if(data.length>0)
+		{
+		 	if(request.body.password===data[0].password)
+				response.redirect('/homepage');
+		  	else
+		        response.end('invalid password');
+		}
+		else 
+			response.end('user not registered');
+	
 
 });
 
 
 });
-
-
-
-
-
-
-
-
-
 app.listen(3000);
 console.log("server listening");
 
